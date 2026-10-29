@@ -39,7 +39,9 @@
     .sw-btn--primary { background: var(--sw-accent); color: #06101F; }
     .sw-btn--ghost { color: var(--sw-ink); border-color: rgba(238, 243, 251, .3); }
     .sw-route__label { background: rgba(10, 18, 34, .88); color: var(--sw-ink); }
-    .sw-copylayer::before { width: min(60vw, 800px); }
+    .sw-topbar { background: linear-gradient(180deg, var(--sw-bg) 0%, color-mix(in srgb, var(--sw-bg) 70%, transparent) 60%, transparent 100%); }
+    @media (min-width: 861px) { .sw-copylayer::before { width: min(60vw, 800px); } }
+    @media (max-width: 860px) { .sw-copy { right: 44px; } .sw-copy__tags li { font-size: .76rem; padding: 6px 11px; } }
 
     /* ---- data room (plain page after the flight) ---- */
     .dr { position: relative; z-index: 45; background: var(--sw-bg); border-top: 1px solid var(--line);
@@ -185,21 +187,21 @@
           label: 'El problema', accent: '#F59E0B',
           eyebrow: 'El cuello de botella',
           title: 'El comercio global aún espera de 3 a 5 días.',
-          body: 'La banca corresponsal (SWIFT) cobra entre 3% y 6% y congela capital de trabajo. El comprador teme pagar antes de recibir la carga; el vendedor teme despachar sin pago garantizado.',
+          body: 'SWIFT cobra entre 3% y 6% y congela capital de trabajo. El comprador teme pagar antes de recibir la carga; el vendedor, despachar sin pago garantizado.',
           tags: ['3–5 días hábiles', '3–6% en costos', 'Liquidez congelada'],
         }),
         sec('escrow', {
           label: 'Smart Escrow', accent: '#22D3EE', linger: 0.3,
           eyebrow: 'La solución',
           title: 'El pago se libera cuando la carga se valida.',
-          body: 'Cartas de crédito digitales: los fondos quedan en custodia en un contrato inteligente y se liberan automáticamente al validar la documentación aduanera y el manifiesto de carga.',
+          body: 'Cartas de crédito digitales: los fondos quedan en un contrato inteligente y se liberan solos al validar la documentación aduanera y el manifiesto de carga.',
           tags: ['Cartas de crédito digitales', 'Stablecoins 1:1 USD', 'Validación documental'],
         }),
         sec('capas', {
           label: 'Cumplimiento', accent: '#818CF8',
           eyebrow: 'Mitigación de riesgos',
           title: 'Tres capas de defensa institucional.',
-          body: 'AML/KYB nativo con análisis on-chain (Chainalysis), custodia multifirma con stablecoins auditadas (USDT/USDC) y rampa regulada a fiat, depositada en la cuenta corporativa.',
+          body: 'AML/KYB nativo con análisis on-chain (Chainalysis), custodia multifirma en USDT/USDC y rampa regulada a fiat directo a la cuenta corporativa.',
           tags: ['AML / KYB', 'Custodia multifirma', 'USD · EUR · BRL · MXN'],
         }),
         sec('flujo', {
@@ -213,7 +215,7 @@
           label: 'Modelo', accent: '#A78BFA',
           eyebrow: 'Monetización & $AETH',
           title: 'Ingresos por volumen, suscripción y token.',
-          body: 'Comisión de 0.25%–0.35% sobre el GMV y licencias SaaS de $500–$2,500/mes. $AETH da hasta 50% de descuento en comisiones, staking para nodos de escrow y gobernanza; el 15% de las comisiones financia recompra y quema.',
+          body: '0.25%–0.35% sobre el GMV y SaaS de $500–$2,500/mes. $AETH: hasta 50% de descuento en comisiones, staking y gobernanza; el 15% de las comisiones va a recompra y quema.',
           tags: ['Take rate 0.25–0.35%', 'SaaS Enterprise', 'Buyback & burn 15%'],
         }),
         sec('fondos', {
