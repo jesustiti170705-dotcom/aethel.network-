@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Aethel Network — Ronda Seed</title>
+  <meta name="description" content="Aethel Network: infraestructura compliance-first de comercio y liquidación B2B. Ronda Seed de $10M USDT." />
+  <meta name="theme-color" content="#0A1222" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2l12 7v14l-12 7-12-7V9z' fill='%231E3A8A'/%3E%3Cpath d='M16 9l7 13H9z' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root, .sw-root {
+      --sw-bg: #0A1222;
+      --sw-ink: #EEF3FB;
+      --sw-ink-soft: #93A3BD;
+      --sw-accent: #3B82F6;
+      --sw-font-display: "Manrope", system-ui, sans-serif;
+      --sw-font-body: "Inter", system-ui, sans-serif;
+      --line: rgba(148, 163, 184, .16);
+      --card: rgba(15, 25, 46, .72);
+    }
+    html, body { background: var(--sw-bg); color: var(--sw-ink); }
+    body { font-family: var(--sw-font-body); -webkit-font-smoothing: antialiased; }
+
+    /* ---- dark-theme overrides for the scroll-world chrome ---- */
+    .sw-sky__glow { background: radial-gradient(55% 40% at 72% 30%, color-mix(in srgb, var(--sw-accent) 16%, transparent), transparent 70%); }
+    .sw-brand__mark { width: 28px; height: 30px; border-radius: 0; box-shadow: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 30'%3E%3Cpath d='M14 1l12 7v14l-12 7-12-7V8z' fill='%231E3A8A' stroke='%2360A5FA' stroke-width='1.4'/%3E%3Cpath d='M14 8.5l6.8 12.5H7.2z' fill='%23fff'/%3E%3C/svg%3E") center/contain no-repeat; }
+    .sw-brand__name { letter-spacing: .14em; font-size: .95rem; font-weight: 800; text-transform: uppercase; }
+    .sw-nav { background: rgba(10, 18, 34, .62); border-color: var(--line); }
+    .sw-nav__item { color: var(--sw-ink-soft); }
+    .sw-nav__item.is-active { color: #06101F; }
+    .sw-topcta { color: #06101F; background: var(--sw-ink); }
+    .sw-copy__eyebrow { letter-spacing: .18em; }
+    .sw-copy__title { font-weight: 800; letter-spacing: -.02em; }
+    .sw-copy__tags li { color: color-mix(in srgb, var(--sw-accent) 55%, #fff); background: color-mix(in srgb, var(--sw-accent) 14%, #0A1222); border-color: color-mix(in srgb, var(--sw-accent) 40%, transparent); }
+    .sw-btn--primary { background: var(--sw-accent); color: #06101F; }
+    .sw-btn--ghost { color: var(--sw-ink); border-color: rgba(238, 243, 251, .3); }
+    .sw-route__label { background: rgba(10, 18, 34, .88); color: var(--sw-ink); }
+    .sw-copylayer::before { width: min(60vw, 800px); }
+
+    /* ---- data room (plain page after the flight) ---- */
+    .dr { position: relative; z-index: 45; background: var(--sw-bg); border-top: 1px solid var(--line);
+      padding: clamp(64px, 10vw, 128px) clamp(18px, 5vw, 64px) 48px; }
+    .dr__in { max-width: 1120px; margin: 0 auto; }
+    .dr h2 { font-family: var(--sw-font-display); font-weight: 800; letter-spacing: -.02em; font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.05; margin: 10px 0 14px; }
+    .dr h3 { font-family: var(--sw-font-display); font-weight: 700; font-size: 1.15rem; margin: 0 0 18px; }
+    .eyebrow { font-family: var(--sw-font-display); font-weight: 700; font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: #60A5FA; }
+    .lede { color: var(--sw-ink-soft); font-size: 1.08rem; line-height: 1.6; max-width: 62ch; margin: 0; }
+    .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 56px; }
+    .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+    .kpi b { display: block; font-family: var(--sw-font-display); font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 800; color: #fff; }
+    .kpi span { display: block; margin-top: 6px; font-size: .82rem; color: var(--sw-ink-soft); line-height: 1.4; }
+    .grid2 { display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; }
+    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: clamp(20px, 3vw, 32px); }
+    .alloc { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+    .alloc__top { display: flex; justify-content: space-between; gap: 12px; font-weight: 600; font-size: .95rem; }
+    .alloc__top em { font-style: normal; color: var(--sw-ink-soft); font-weight: 500; white-space: nowrap; }
+    .bar { height: 8px; border-radius: 99px; background: rgba(148, 163, 184, .14); margin: 8px 0 6px; overflow: hidden; }
+    .bar i { display: block; height: 100%; border-radius: 99px; }
+    .alloc p { margin: 0; font-size: .86rem; color: var(--sw-ink-soft); line-height: 1.5; }
+    .road { list-style: none; margin: 0; padding: 0; position: relative; }
+    .road::before { content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(#60A5FA, #22D3EE, #34D399); opacity: .5; }
+    .road li { position: relative; padding: 0 0 22px 30px; }
+    .road li:last-child { padding-bottom: 0; }
+    .road li::before { content: ""; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--c); background: var(--sw-bg); }
+    .road b { display: block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
+    .road strong { display: block; margin: 4px 0; font-size: 1rem; }
+    .road p { margin: 0; font-size: .88rem; color: var(--sw-ink-soft); line-height: 1.5; }
+    .rev { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 20px; }
+    .rev div { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+    .rev b { display: block; font-family: var(--sw-font-display); font-size: 1.05rem; margin-bottom: 6px; }
+    .rev p { margin: 0; font-size: .86rem; color: var(--sw-ink-soft); line-height: 1.5; }
+    .cta { margin-top: 56px; padding: clamp(28px, 4vw, 48px); border-radius: 24px; border: 1px solid rgba(96, 165, 250, .3);
+      background: radial-gradient(80% 120% at 100% 0%, rgba(59, 130, 246, .22), transparent 60%), var(--card);
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+    .cta h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin: 6px 0 8px; }
+    .cta p { margin: 0; color: var(--sw-ink-soft); max-width: 52ch; line-height: 1.55; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { text-decoration: none; font-weight: 600; font-size: .95rem; padding: 14px 24px; border-radius: 999px; transition: transform .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn--p { background: #3B82F6; color: #fff; }
+    .btn--g { color: var(--sw-ink); border: 1.5px solid rgba(238, 243, 251, .3); }
+    .legal { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .78rem; line-height: 1.6; color: #6B7C97; }
+    .legal p { margin: 0 0 10px; max-width: 110ch; }
+    @media (max-width: 860px) {
+      .kpis, .rev { grid-template-columns: 1fr 1fr; }
+      .grid2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="top"></div>
+  <div id="world"></div>
+
+  <section class="dr" id="data-room" aria-labelledby="dr-title">
+    <div class="dr__in">
+      <span class="eyebrow">Data room · Ronda Seed</span>
+      <h2 id="dr-title">$10,000,000 USDT para construir el riel de liquidación del comercio B2B.</h2>
+      <p class="lede">Aethel Network integra trazabilidad logística, gobernanza de cumplimiento (AML/KYB) y liquidación instantánea en stablecoins para que importadores y exportadores operen sin la fricción de la banca corresponsal.</p>
+
+      <div class="kpis">
+        <div class="kpi"><b>$150T</b><span>Volumen anual del comercio B2B global</span></div>
+        <div class="kpi"><b>&lt; 0.35%</b><span>Costo por transacción, frente a 3–6% del sistema tradicional</span></div>
+        <div class="kpi"><b>Instantánea</b><span>Liquidación, frente a 3–5 días hábiles vía SWIFT</span></div>
+        <div class="kpi"><b>$50M</b><span>GMV objetivo del piloto LatAm – Norteamérica</span></div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <h3>Uso de fondos</h3>
+          <ul class="alloc">
+            <li><div class="alloc__top">Desarrollo e ingeniería blockchain <em>40% · $4.0M</em></div><div class="bar"><i style="width:40%;background:#3B82F6"></i></div><p>Motor de Smart Escrow multicadena y auditorías globales de seguridad.</p></li>
+            <li><div class="alloc__top">Licencias y cumplimiento legal <em>25% · $2.5M</em></div><div class="bar"><i style="width:25%;background:#818CF8"></i></div><p>Licencias Money Transmitter (MTL), estructura corporativa y registros KYC/AML.</p></li>
+            <li><div class="alloc__top">Fondo de liquidez y market making <em>20% · $2.0M</em></div><div class="bar"><i style="width:20%;background:#22D3EE"></i></div><p>Garantía de liquidación inmediata en puentes fiat/cripto regionales.</p></li>
+            <li><div class="alloc__top">Ventas B2B y go-to-market <em>15% · $1.5M</em></div><div class="bar"><i style="width:15%;background:#34D399"></i></div><p>Onboarding de los primeros 100 clientes exportadores y agencias de carga.</p></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Hoja de ruta · 24 meses</h3>
+          <ol class="road">
+            <li style="--c:#60A5FA"><b>Fase 1 · Meses 1–6</b><strong>Infraestructura base y auditoría</strong><p>Protocolo central, auditorías de contratos inteligentes y constitución regulada (EE.UU. / Singapur).</p></li>
+            <li style="--c:#22D3EE"><b>Fase 2 · Meses 7–12</b><strong>Piloto comercial e integración API</strong><p>Piloto en el corredor LatAm – Norteamérica y primeros $50M en GMV.</p></li>
+            <li style="--c:#34D399"><b>Fases 3–4 · Meses 13–24</b><strong>Expansión global y TGE de $AETH</strong><p>Ejecución del SAFT, distribución inicial a inversionistas Seed con vesting y staking corporativo para nodos de escrow.</p></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="rev">
+        <div><b>Take rate</b><p>0.25%–0.35% del volumen bruto transaccionado (GMV).</p></div>
+        <div><b>SaaS Enterprise</b><p>Licencias de $500–$2,500/mes para gestión aduanera.</p></div>
+        <div><b>Utilidad $AETH</b><p>Hasta 50% de descuento en comisiones, staking para nodos de escrow y gobernanza de corredores.</p></div>
+        <div><b>Buyback &amp; burn</b><p>El 15% de las comisiones en USDT se destina a recompra y quema de $AETH.</p></div>
+      </div>
+
+      <div class="cta">
+        <div>
+          <span class="eyebrow">Participación · SAFE + SAFT</span>
+          <h2>Hablemos de la ronda.</h2>
+          <p>Las asignaciones y los derechos sobre tokens futuros se formalizan mediante acuerdos SAFE + SAFT, tras verificación KYC/KYB del inversionista.</p>
+        </div>
+        <div class="btns">
+          <a class="btn btn--p" id="cta-mail" href="#">Solicitar acceso al data room</a>
+        </div>
+      </div>
+
+      <div class="legal">
+        <p>Este sitio es informativo y confidencial. No constituye una oferta de venta ni una solicitud de oferta de compra de valores, tokens u otros instrumentos en ninguna jurisdicción. Cualquier inversión se realiza exclusivamente mediante documentación definitiva (SAFE / SAFT) con inversionistas que cumplan los requisitos aplicables y superen los procesos de verificación KYC/KYB.</p>
+        <p>Las proyecciones, cifras de mercado y hojas de ruta son estimaciones de la compañía y están sujetas a riesgos e incertidumbres. Los activos digitales son volátiles y pueden perder su valor.</p>
+        <p>© Aethel Network</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="scrub-engine.js"></script>
+  <script>
+    // Contact address for investor requests — change it here if needed.
+    var CONTACT_EMAIL = 'inversiones@aethel.network';
+    var mail = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('Aethel Network · Ronda Seed — solicitud de data room');
+    document.getElementById('cta-mail').href = mail;
+
+    var V = 'assets/vid/', S = 'assets/stills/';
+    function sec(id, o) {
+      o.id = id; o.still = S + id + '.webp'; o.stillMobile = S + id + '-m.webp';
+      o.clip = V + id + '.mp4'; o.clipMobile = V + id + '-m.mp4';
+      return o;
+    }
+    mountScrollWorld(document.getElementById('world'), {
+      brand: { name: 'Aethel Network', href: '#top' },
+      cta: { label: 'Data room', href: '#data-room' },
+      hint: 'Desliza para recorrer la red',
+      diveScroll: 1.35,
+      connScroll: 0.85,
+      sections: [
+        sec('hq', {
+          label: 'Aethel', accent: '#3B82F6', scroll: 1.6, linger: 0.35,
+          eyebrow: 'Ronda Seed · $10M USDT',
+          title: 'La infraestructura del comercio B2B global.',
+          body: 'Trazabilidad logística, cumplimiento AML/KYB y liquidación instantánea en stablecoins, en una sola red diseñada para corporaciones.',
+          tags: ['TAM $150T', '< 0.35% por transacción', 'Liquidación instantánea'],
+        }),
+        sec('problema', {
+          label: 'El problema', accent: '#F59E0B',
+          eyebrow: 'El cuello de botella',
+          title: 'El comercio global aún espera de 3 a 5 días.',
+          body: 'La banca corresponsal (SWIFT) cobra entre 3% y 6% y congela capital de trabajo. El comprador teme pagar antes de recibir la carga; el vendedor teme despachar sin pago garantizado.',
+          tags: ['3–5 días hábiles', '3–6% en costos', 'Liquidez congelada'],
+        }),
+        sec('escrow', {
+          label: 'Smart Escrow', accent: '#22D3EE', linger: 0.3,
+          eyebrow: 'La solución',
+          title: 'El pago se libera cuando la carga se valida.',
+          body: 'Cartas de crédito digitales: los fondos quedan en custodia en un contrato inteligente y se liberan automáticamente al validar la documentación aduanera y el manifiesto de carga.',
+          tags: ['Cartas de crédito digitales', 'Stablecoins 1:1 USD', 'Validación documental'],
+        }),
+        sec('capas', {
+          label: 'Cumplimiento', accent: '#818CF8',
+          eyebrow: 'Mitigación de riesgos',
+          title: 'Tres capas de defensa institucional.',
+          body: 'AML/KYB nativo con análisis on-chain (Chainalysis), custodia multifirma con stablecoins auditadas (USDT/USDC) y rampa regulada a fiat, depositada en la cuenta corporativa.',
+          tags: ['AML / KYB', 'Custodia multifirma', 'USD · EUR · BRL · MXN'],
+        }),
+        sec('flujo', {
+          label: 'Cómo funciona', accent: '#60A5FA', linger: 0.3,
+          eyebrow: 'Escrow workflow',
+          title: 'Cuatro pasos, de la orden al pago.',
+          body: 'El importador deposita USDT en el escrow; se validan los documentos y el BL vía API; el contrato ejecuta la liquidación; el exportador cobra en USDT o en fiat.',
+          tags: ['1 · Depósito', '2 · Validación', '3 · Settlement', '4 · Liquidación'],
+        }),
+        sec('token', {
+          label: 'Modelo', accent: '#A78BFA',
+          eyebrow: 'Monetización & $AETH',
+          title: 'Ingresos por volumen, suscripción y token.',
+          body: 'Comisión de 0.25%–0.35% sobre el GMV y licencias SaaS de $500–$2,500/mes. $AETH da hasta 50% de descuento en comisiones, staking para nodos de escrow y gobernanza; el 15% de las comisiones financia recompra y quema.',
+          tags: ['Take rate 0.25–0.35%', 'SaaS Enterprise', 'Buyback & burn 15%'],
+        }),
+        sec('fondos', {
+          label: 'La ronda', accent: '#34D399', scroll: 1.6, linger: 0.3,
+          eyebrow: 'Uso de fondos · 24 meses',
+          title: '$10M para llevar el piloto a escala global.',
+          body: '40% ingeniería blockchain, 25% licencias y cumplimiento, 20% fondo de liquidez, 15% ventas B2B. Meta del primer año: piloto LatAm – Norteamérica con $50M de GMV.',
+          tags: ['SAFE + SAFT', 'EE.UU. / Singapur'],
+          cta: { primary: { label: 'Ver data room', href: '#data-room' }, secondary: { label: 'Contactar', href: mail } },
+        }),
+      ],
+      connectors: [1, 2, 3, 4, 5, 6].map(function (n) { return V + 'conn' + n + '.mp4'; }),
+      connectorsMobile: [1, 2, 3, 4, 5, 6].map(function (n) { return V + 'conn' + n + '-m.mp4'; }),
+    });
+  </script>
+</body>
+</html>
